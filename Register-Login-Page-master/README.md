@@ -54,7 +54,3 @@ In the Register/Login project, the **Delete Operation** is demonstrated when a u
     * Removes the user's data from the MongoDB database, including credentials and any associated information.
     * Session data associated with the user is cleared from the MongoDB database.
     * Redirects users to Sign In Page after successful deletion.
-
-Register/Login can be visited at [https://registerlogin.ca/](https://registerlogin.ca/)
-
-![site homepage image](images/final-design.png)
