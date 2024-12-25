@@ -1,0 +1,23 @@
+.response {
+    width: max-content;
+    margin: auto;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.response-success {
+    background-color: green;
+    color: black;
+}
+
+.response-failure {
+    background-color: #880808;
+    color: white;
+}
+
+.warning{
+    display: none;
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+}

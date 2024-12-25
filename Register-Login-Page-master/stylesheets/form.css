@@ -1,0 +1,83 @@
+button{
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.reset-password-form-container, .forgot-password-form-container{
+    max-width: 300px;
+}
+
+.form-heading{
+    margin-bottom: 1rem;
+    font-size: 2rem;    
+}
+
+.form {
+    margin-bottom: 8px;
+}
+
+.form-input-container {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.forgot-password-form-label, .reset-password-form-label{
+    font-size: 1.25rem;
+}
+
+.form-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    background: none;
+    outline: none;
+}
+
+.forgot-password-form-input, .reset-password-form-input{
+    width: 100%;
+    height: 25px;
+    box-sizing: border-box;
+}
+
+.showHidePassword {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.submit-button {
+    width: 100%;
+    border-radius: 16px;
+    padding-block: 8px;
+    background-color: #211452;
+    color: white;
+    font-size: 14px;
+}
+
+.forgot-password-form-submit-button, .reset-password-form-submit-button{
+    width: max-content;
+    padding: 0.75rem 1.25rem;
+}
+
+.check-for-specifications, .check-for-match{
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 8px;
+    background-color: white;
+}
+
+@media(min-width: 700px){
+    .submit-button {
+        font-size: 18px;
+    }
+}
