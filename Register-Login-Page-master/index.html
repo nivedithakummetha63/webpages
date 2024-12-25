@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Register Login Landing page">
+    <meta name="author" content="Sukhbir Kaur Chung" />
+    <meta name="date" content="Aug 06, 2024" />
+
+    <link rel="icon" href="images/site-icon.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Barlow+Semi+Condensed:wght@500&family=Big+Shoulders+Display&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/CSSReset.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/loader.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/form.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/response.css" />
+
+    <title>Register Login Landing Page</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/index.js" defer></script>
+</head>
+
+<body>
+    <div class="loader"><img src="images/loader.png" alt="loader icon"></div>
+
+    <div class="wrapper">
+        <div class="welcome-screen">
+            <h1 class="welcome-screen-heading">Register</h1>
+            <div class="logo">
+                <img src="images/site-logo.svg" alt="webiste logo" width="50%">
+            </div>
+        </div>
+
+        <div class="form-container">
+            <div class="form-buttons">
+                <a href="" class="signin-button">SIGN IN</a>
+                <a href="webpages/signup.html" class="signup-button">SIGN UP</a>
+            </div>
+
+            <div class="form">
+                <form>
+                    <div class="form-input-container">
+                        <label class="form-label" for="username">USERNAME</label>
+                        <input class="form-input" type="text" id="username" name="username" required />
+                    </div>
+                    <div class="form-input-container">
+                        <label class="form-label" for="password">PASSWORD</label>
+                        <input class="form-input" type="password" id="password" name="password" required />
+                        <button type="button" class="showHidePassword"><img src="images/showPassword-icon.png"
+                                alt="Show Password icon" width="20" /></button>
+                        <button type="button" class="showHidePassword"><img src="images/hidePassword-icon.png"
+                                alt="Hide Password icon" width="20" /></button>
+                        <button class="forgot-password">Forgot password?</button>
+                    </div>
+
+                    <div class="submit-button-container">
+                        <button type="submit" class="submit-button" style="margin-top: 0.75rem;">SIGN IN</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="response"></div>
+        </div>
+    </div>
+</body>
+</html>

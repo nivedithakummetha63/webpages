@@ -1,0 +1,118 @@
+body{
+    padding: 0.75rem;
+    background-color: whitesmoke;
+    font-family: "Roboto", sans-serif;
+}
+
+main{
+    max-width: 800px;
+    margin: auto;
+}
+
+main h1{
+    font-size: 1.75rem;    
+    text-align: center;
+}
+
+h2{
+    margin-bottom: 0;
+}
+
+h3{
+    margin-bottom: 0.25rem;
+}
+
+h4{
+    margin: 0;
+}
+
+p, li{
+    line-height: 1.5;
+}
+
+p{
+    margin: 0;
+}
+
+ol, ul{
+    margin: 0;
+    padding-left:1rem;
+}
+
+.user-action-buttons{
+    text-align: right;
+}
+
+.delete-account-btn{
+    margin-right: 0.5rem;
+}
+
+.modal-container{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal{
+    width: max-content;
+    margin: 150px auto 0;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 1rem;
+}
+
+.modal-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-heading h1{
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.modal-heading button{
+    border: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-body{
+    margin-block: 1.5rem;
+}
+
+.modal-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.signout-btn, .delete-account-btn, .cancel-btn, .confirm-deletion-btn{
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background-color: #211452;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cancel-btn{
+    border: 1px solid black;
+    background: none;
+    color: black;
+}
+
+.response{
+    margin: 0.25rem 0 0 auto;
+}
+
+.crud-operation{
+    margin-bottom: 0.5rem;
+}

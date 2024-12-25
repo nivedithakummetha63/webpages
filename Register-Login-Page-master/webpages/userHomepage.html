@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Register Login Landing page">
+    <meta name="author" content="Sukhbir Kaur Chung" />
+    <meta name="date" content="Aug 06, 2024" />
+
+    <link rel="icon" href="../images/site-icon.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../stylesheets/loader.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/response.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/userHomepage.css" />
+
+    <title>Register Login Landing Page</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../scripts/userHomepage.js" defer></script>
+    <script src="../scripts/deleteAccount.js" defer></script>
+</head>
+
+<body>
+    <div class="loader"><img src="../images/loader.png" alt="loader icon"></div>
+
+    <div class="modal-container">
+        <div class="modal">
+            <div class="modal-heading">
+                <h1>Delete</h1>
+                <button>x</button>
+            </div>
+            
+            <div class="modal-body">
+                <p>Are you sure you want to delete your account?</p>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="cancel-btn">Cancel</button>
+                <button class="confirm-deletion-btn">Confirm</button>
+            </div>            
+        </div>
+    </div>    
+
+    <main>
+        <div class="user-action-buttons">
+            <button class="delete-account-btn">Delete Account</button>
+            <button class="signout-btn">Sign Out</button>            
+        </div>
+
+        <div class="response"></div>
+
+        <h1 class="user-homepage-heading">Welcome To Register/Login</h1>
+
+        <div class="project-details">
+            <h2>Project Details</h2>
+
+            <div class="project-introduction">
+                <h3>Introduction</h3>
+                <p>
+                    Register/Login is a secure user authentication and authorization system that I 
+                    built using HTML, CSS, and JavaScript for the frontend, and Node.js with MongoDB 
+                    for the backend. It enables users to register, log in, update their passwords, 
+                    and delete their accounts, with all operations securely managed using the 
+                    Passport npm package. This system showcases my ability to develop full-stack 
+                    applications with a strong focus on security and user experience.
+                </p>
+            </div>
+
+            <div class="technologies">
+                <h3>Technologies Used</h3>
+                <ul class="technologies-list">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Node.js</li>
+                    <li>Express</li>
+                    <li>MongoDB</li>
+                    <li>
+                        npm packages used:
+                        <ul>
+                            <li>passport</li>
+                            <li>passport-local</li>
+                            <li>passport-local-mongoose</li>
+                            <li>express-session</li>
+                            <li>mongoose</li>
+                            <li>axios</li>
+                            <li>connect-mongo</li>
+                            <li>cors</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Authentication and Authorization</h3>
+                <ul>
+                    <li><b>Authentication</b> occurs when a user signs in through the Sign-In page. The <a href="https://github.com/SukhbirChung/Register-Login-Backend-Application">backend Node.js application</a> uses the Passport npm package to handle user authentication and authorization.</li>
+                    <li><b>Authorization</b> takes place when a user attempts to access the current page that you are reading right now. Only authenticated users are authorized to view this page. If an unauthenticated user tries to access it, they will be redirected to the Sign-In page.</li>
+                </ul>
+            </div>
+
+            <div class="crud-operations-container">
+                <h3>Detailed Overview of CRUD Operations</h3>
+
+                <ol>
+                    <li class="crud-operation">
+                        <h4>Create (Sign Up)</h4>
+
+                        <p>
+                            In the Register/Login project, the <b>Create operation</b> is demonstrated when a user's email, username, and hashed password are written to the MongoDB database. Below is a list of checks performed before storing the credentials in the database:
+                        </p>
+
+                        <ul>
+                            <li>Providing a username, email, and password is mandatory, and the sign-up process will not proceed unless all fields are filled.</li>
+                            <li>
+                                Custom validation is implemented to ensure:
+                                <ul>
+                                    <li>The username is not empty and does not have spaces.</li>
+                                    <li>The email is in the correct format using regular expressions.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Implemented validation to ensure strong passwords are used:
+                                <ul>
+                                    <li>No empty spaces are allowed.</li>
+                                    <li>Must be at least 8 characters long and at most 12 characters allowed.</li>                                    
+                                    <li>Must include at least one uppercase letter, one lowercase letter, and one special character.</li>
+                                </ul>
+                            </li>
+                            <li>A 6-digit confirmation code is sent to the user's email to verify its validity and prevent fake entries. The account is created only after the correct code is entered by the user.</li>
+                            <li>Passwords are hashed using <b>passport npm package</b> before being stored in the MongoDB database.</li>
+                        </ul>
+                    </li>
+
+                    <li class="crud-operation">
+                        <h4>Read (Sign In)</h4>
+
+                        <p>
+                            In the Register/Login project, the <b>Read Operation</b> is demonstrated when a user's username and password are read from the database for authentication and signing out. Below is a list of actions performed during the user sign-in and sign-out process: 
+                        </p>
+
+                        <ul>
+                            <li>Users can only log in using their registered email and password.</li>
+                            <li>UserHomepage is secured and only authroized users can access the page.</li>
+                            <li>Sessions and cookies are used to maintain user login status across different pages. The session data is stored in the MongoDB database using <b>connect-mongo</b> npm package.</li>
+                            <li>Redirects users to the userHomepage upon successful login.</li>
+                            <li>Redirects users to the Sign In page upon successful sign out.</li>
+                        </ul>
+                    </li>
+
+                    <li class="crud-operation">
+                        <h4>Update (Password Update)</h4>
+
+                        <p>
+                            In the Register/Login project, the <b>Update Operation</b> is demonstrated when a user forgets their password and submits a <b>Forgot Password</b> request. A <b>Forgot Password</b> link is provided on the Sign-In page. Below is a list of actions performed during the password reset process:
+                        </p>
+
+                        <ul>
+                            <li>When a user requests a password reset, an email is sent with a link containing a token to ensure it's the correct user. The link expires in 1 hour.</li>
+                            <li>The new password is hashed and securely stored in the database, replacing the old one.</li>
+                            <li>The token is deleted from the database after the password is updated securely.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h4>Delete (Account Deletion)</h4>
+
+                        <p>
+                            In the Register/Login project, the <b>Delete Operation</b> is demonstrated when a user clicks on the <b>Delete Account</b> button. Below is a list of actions performed during the account deletion process: 
+
+                        </p>
+
+                        <ul>
+                            <li>Users can permanently delete their accounts after confirming their decision.</li>
+                            <li>Removes the user's data from the MongoDB database, including credentials and any associated information.</li>
+                            <li>Session data associated with the user is cleared from the MongoDB database.</li>
+                            <li>Redirects users to Sign In Page after successful deletion.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

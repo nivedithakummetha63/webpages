@@ -1,0 +1,26 @@
+.confirmation-code-container{
+    flex-direction: column;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.confirmation-code-container p{
+    padding: 1rem;
+    text-align: center;
+}
+
+.confirmation-code-form button{
+    background-color: white;
+}
+
+.signin-button{
+    border-bottom: none;
+}
+
+.signup-button{
+    border-bottom: 1px solid black;
+}
+
+.response{
+    margin-bottom: 3px;
+}
